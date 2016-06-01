@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JsLoadPattern</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
+    (open the JavaScript console in your browser to follow the logging of JS that's loading/unloading)
+    <%= yield %>
+  </body>
+</html>
