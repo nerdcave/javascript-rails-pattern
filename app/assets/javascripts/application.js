@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+// Include this first
+//= require page_controller
+
+// JS objects load() will execute in the same order as files required here
+//= require players/players
+//= require players/player_new
+//= require players/increase_score_button

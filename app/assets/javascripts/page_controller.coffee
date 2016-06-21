@@ -1,13 +1,13 @@
 (window.myApp ?= {}).pageController =
-  pageObjects: {}
+  entries: []
   add: (selector, pageObject) ->
-    @pageObjects[selector] = pageObject
+    @entries.push({selector, pageObject})
   canLoad: (selector) ->
     $(selector).length > 0
   unloadPage: ->
-    pageObject.unload?() for selector, pageObject of @pageObjects when @canLoad(selector)
+    entry.pageObject.unload?() for entry in @entries when @canLoad(entry.selector)
   loadPage: ->
-    pageObject.load() for selector, pageObject of @pageObjects when @canLoad(selector)
+    entry.pageObject.load() for entry in @entries when @canLoad(entry.selector)
 
 
 jQuery ->
